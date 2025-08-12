@@ -1,34 +1,22 @@
-# CropFocal - 크롭 화각 계산기
+# CropFocal - 크롭 화각 계산기 / Crop Field of View Calculator
+
+[한국어](#한국어) | [English](#english)
+
+---
+
+## 한국어
 
 카메라 사용자를 위한 크롭된 사진의 등가 초점거리 계산 웹앱입니다.
 
-## 기능
-
-### 현재 구현된 기능
-- 다양한 센서 크기 지원 (풀프레임, APS-C, APS-C 캐논, 마이크로 포서드, 1인치)
-- 원본 사진과 크롭된 사진의 해상도 입력
-- 대각선 화각 기준 등가 초점거리 계산
-- 크롭 팩터 및 크롭 비율 표시
-- 상세한 계산 과정 표시
+### 기능
+- 다양한 센서 크기 지원 (풀프레임, APS-C, 마이크로 포서드, 중형 포맷 등)
+- 실제 초점거리와 35mm 환산 초점거리 상호 계산
+- 한국어/영어 다국어 지원
 - 반응형 웹 디자인
-- 입력값 검증 및 에러 처리
 
-### 향후 추가 예정 기능
-- 크롭된 사진 업로드를 통한 자동 해상도 감지
-- EXIF 데이터에서 원본 촬영 정보 추출
-- 다양한 크롭 비율 프리셋 제공
+### 계산 원리
 
-## 사용법
-
-1. **센서 크기 선택**: 사용한 카메라의 센서 타입을 선택합니다.
-2. **원본 렌즈 초점거리 입력**: 촬영 시 사용한 렌즈의 초점거리를 입력합니다.
-3. **원본 사진 해상도 입력**: 원본 사진의 가로×세로 픽셀 수를 입력합니다.
-4. **크롭된 사진 해상도 입력**: 크롭 후 사진의 가로×세로 픽셀 수를 입력합니다.
-5. **계산하기 버튼 클릭**: 등가 초점거리가 계산되어 표시됩니다.
-
-## 계산 원리
-
-### 크롭 팩터 계산
+#### 크롭 팩터 계산
 크롭된 이미지의 등가 초점거리는 대각선 화각을 기준으로 계산됩니다:
 
 ```
@@ -36,59 +24,7 @@
 등가 초점거리 = 원본 초점거리 × 크롭 팩터
 ```
 
-### 왜 대각선 화각인가?
-- **일관성**: 비율이 변경되는 크롭에서도 일관된 기준 제공
-- **실용성**: 사진의 전체적인 화각 변화를 가장 잘 반영
-- **표준**: 대부분의 사진 소프트웨어에서 사용하는 방식
-
-## 예시
-
-### 동일 비율 크롭
-- 원본: 6000×4000 픽셀, 50mm
-- 크롭: 3000×2000 픽셀
-- 결과: **100mm** (2배 크롭)
-
-### 정사각형 크롭
-- 원본: 6000×4000 픽셀, 50mm
-- 크롭: 3000×3000 픽셀
-- 결과: **85mm** (1.7배 크롭)
-
-### 세로 크롭
-- 원본: 6000×4000 픽셀, 50mm
-- 크롭: 2000×3000 픽셀
-- 결과: **100mm** (2배 크롭)
-
-## 지원 센서 크기
-
-| 센서 타입 | 크기 (mm) | 일반적인 카메라 |
-|-----------|-----------|----------------|
-| 풀프레임 | 36×24 | Canon 5D, Nikon D850, Sony A7 시리즈 |
-| APS-C | 23.6×15.6 | Nikon D7500, Sony A6000 시리즈 |
-| APS-C (캐논) | 22.2×14.8 | Canon 80D, 7D Mark II |
-| 마이크로 포서드 | 17.3×13 | Olympus OM-D, Panasonic GH 시리즈 |
-| 1인치 | 13.2×8.8 | Sony RX100, Canon G7X |
-
-## 기술 스택
-
-- **HTML5**: 시맨틱 마크업
-- **CSS3**: 모던 스타일링, Grid/Flexbox 레이아웃
-- **Vanilla JavaScript**: 순수 자바스크립트 (외부 라이브러리 없음)
-- **로컬 실행**: 서버 없이 브라우저에서 직접 실행
-
-## 파일 구조
-
-```
-CropFocal/
-├── index.html          # 메인 HTML 파일
-├── css/
-│   └── style.css       # 스타일시트
-├── js/
-│   ├── calculator.js   # 화각 계산 로직
-│   └── main.js         # 메인 애플리케이션 로직
-└── README.md           # 프로젝트 설명서
-```
-
-## 실행 방법
+### 실행 방법
 
 1. 프로젝트 폴더를 다운로드합니다.
 2. `index.html` 파일을 웹 브라우저에서 엽니다.
@@ -101,21 +37,45 @@ CropFocal/
    npx http-server
    ```
 
-## 브라우저 호환성
-
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
-
-## 라이선스
+### 라이선스
 
 MIT License
 
-## 기여하기
-
-버그 리포트나 기능 제안은 GitHub Issues를 통해 제출해주세요.
-
 ---
 
-**CropFocal**은 사진작가들이 크롭된 이미지의 화각을 쉽게 계산할 수 있도록 도와주는 도구입니다.
+## English
+
+A web application for calculating equivalent focal length of cropped photos for camera users.
+
+### Features
+- Support for various sensor sizes (Full Frame, APS-C, Micro Four Thirds, Medium Format, etc.)
+- Bidirectional calculation between actual focal length and 35mm equivalent focal length
+- Multi-language support (Korean/English)
+- Responsive web design
+
+### Calculation Principle
+
+#### Crop Factor Calculation
+The equivalent focal length of cropped images is calculated based on diagonal field of view:
+
+```
+Crop Factor = √(Original Width² + Original Height²) / √(Crop Width² + Crop Height²)
+Equivalent Focal Length = Original Focal Length × Crop Factor
+```
+
+### How to Run
+
+1. Download the project folder.
+2. Open `index.html` file in a web browser.
+3. Or run a local server and access:
+   ```bash
+   # Python 3
+   python -m http.server 8000
+   
+   # Node.js (requires http-server package)
+   npx http-server
+   ```
+
+### License
+
+MIT License
