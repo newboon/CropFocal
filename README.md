@@ -1,5 +1,7 @@
 # CropFocal - 크롭 화각 계산기 / Crop Field of View Calculator
 
+🌐 **Live Demo**: [https://newboon.github.io/CropFocal/](https://newboon.github.io/CropFocal/)
+
 [한국어](#한국어) | [English](#english)
 
 ---
@@ -7,6 +9,8 @@
 ## 한국어
 
 카메라 사용자를 위한 크롭된 사진의 등가 초점거리 계산 웹앱입니다.
+
+**🔗 온라인 사용**: [https://newboon.github.io/CropFocal/](https://newboon.github.io/CropFocal/)
 
 ### 계산 원리
 
@@ -40,6 +44,8 @@ MIT License
 ## English
 
 A web application for calculating equivalent focal length of cropped photos for camera users.
+
+**🔗 Try Online**: [https://newboon.github.io/CropFocal/](https://newboon.github.io/CropFocal/)
 
 ### Calculation Principle
 
