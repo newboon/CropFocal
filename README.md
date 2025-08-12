@@ -8,12 +8,6 @@
 
 카메라 사용자를 위한 크롭된 사진의 등가 초점거리 계산 웹앱입니다.
 
-### 기능
-- 다양한 센서 크기 지원 (풀프레임, APS-C, 마이크로 포서드, 중형 포맷 등)
-- 실제 초점거리와 35mm 환산 초점거리 상호 계산
-- 한국어/영어 다국어 지원
-- 반응형 웹 디자인
-
 ### 계산 원리
 
 #### 크롭 팩터 계산
@@ -46,12 +40,6 @@ MIT License
 ## English
 
 A web application for calculating equivalent focal length of cropped photos for camera users.
-
-### Features
-- Support for various sensor sizes (Full Frame, APS-C, Micro Four Thirds, Medium Format, etc.)
-- Bidirectional calculation between actual focal length and 35mm equivalent focal length
-- Multi-language support (Korean/English)
-- Responsive web design
 
 ### Calculation Principle
 
