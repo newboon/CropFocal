@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropFocal - 크롭 화각 계산기</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><strong>CropFocal</strong></h1>
+            <p>크롭된 사진의 등가 초점거리 계산기</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>카메라 정보</h2>
+                
+                <div class="form-group">
+                    <label for="sensor-type">센서 크기:</label>
+                    <select id="sensor-type">
+                        <option value="fullframe" selected>풀프레임 (36×24mm)</option>
+                        <option value="medium-format">중형 포맷 (43.8×32.9mm)</option>
+                        <option value="apsc">APS-C (23.6×15.6mm)</option>
+                        <option value="apsc-canon">APS-C 캐논 (22.2×14.8mm)</option>
+                        <option value="micro43">마이크로 포서드 (17.3×13mm)</option>
+                        <option value="1inch">1인치 (13.2×8.8mm)</option>
+                    </select>
+                </div>
+
+                <div id="focal-length-section">
+                    <div class="form-group" id="single-focal-length">
+                        <label for="focal-length">원본 렌즈 초점거리 (mm):</label>
+                        <input type="number" id="focal-length" min="1" step="0.1">
+                    </div>
+                    
+                    <div id="dual-focal-length" style="display: none;">
+                        <div class="focal-length-group">
+                            <div class="form-group">
+                                <label for="actual-focal-length">실제 초점거리 (mm):</label>
+                                <input type="number" id="actual-focal-length" min="1" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label for="equivalent-focal-length-input">35mm 환산 초점거리 (mm):</label>
+                                <input type="number" id="equivalent-focal-length-input" min="1" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>원본 사진 해상도</h3>
+                <div class="resolution-group">
+                    <div class="form-group">
+                        <label for="original-width">가로 (픽셀):</label>
+                        <input type="number" id="original-width" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="original-height">세로 (픽셀):</label>
+                        <input type="number" id="original-height" min="1">
+                    </div>
+                </div>
+
+                <h3>크롭된 사진 해상도</h3>
+                <div class="resolution-group">
+                    <div class="form-group">
+                        <label for="crop-width">가로 (픽셀):</label>
+                        <input type="number" id="crop-width" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="crop-height">세로 (픽셀):</label>
+                        <input type="number" id="crop-height" min="1">
+                    </div>
+                </div>
+
+                <button id="calculate-btn">계산하기</button>
+            </div>
+
+            <div class="result-section">
+                <h2>계산 결과</h2>
+                <div id="result-container">
+                    <div class="result-item">
+                        <span class="result-label">크롭 후 실제 초점거리:</span>
+                        <span id="crop-actual-focal-length" class="result-value">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">크롭 후 35mm 환산 초점거리:</span>
+                        <span id="crop-equivalent-focal-length" class="result-value">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">크롭 팩터:</span>
+                        <span id="crop-factor" class="result-value">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">크롭 비율:</span>
+                        <span id="crop-ratio" class="result-value">-</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- 언어 선택 섹션 -->
+        <footer>
+            <div id="language-section">
+                <h3>언어 선택</h3>
+                <div class="language-buttons">
+                    <button class="language-btn" data-lang="ko">한국어</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/calculator.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>
